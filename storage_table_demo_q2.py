@@ -6,8 +6,8 @@ auth_token = azurerm.get_access_token_from_cli()
 subscription_id = azurerm.get_subscription_from_cli()
 
 # Define variables with random resource group and storage account names
-resourcegroup_name = 'e1hqv3z'+''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(6))
-storageaccount_name = 'e1hqv3z'+''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(6))
+resourcegroup_name = 'e6jbq'+''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(6))
+storageaccount_name = 'e6jbq'+''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(6))
 location = 'eastus'
 
 ###
@@ -70,10 +70,10 @@ raw_input('Press Enter to continue...')
 car = Entity()
 car.PartitionKey = 'carlist'
 car.RowKey = '001'
-car.make = 'Ford'
-car.model = 'Focus'
+car.make = 'Landrover'
+car.model = 'Discovery'
 car.year = '2016'
-car.color = 'White'
+car.color = 'Black'
 car.price = '10,000'
 table_service.insert_entity('itemstable', car)
 print('Created entry for focus...')
@@ -81,24 +81,24 @@ print('Created entry for focus...')
 car = Entity()
 car.PartitionKey = 'carlist'
 car.RowKey = '002'
-car.make = 'VW'
-car.model = 'Golf'
+car.make = 'Citroen'
+car.model = 'C4'
 car.year = '2016'
-car.color = 'White'
-car.price = '15,000'
+car.color = 'bLUE'
+car.price = '10,000'
 table_service.insert_entity('itemstable', car)
 print('Created entry for veggie...')
 
 car = Entity()
 car.PartitionKey = 'carlist'
 car.RowKey = '003'
-car.make = 'Tonyota'
-car.model = 'Corolla'
+car.make = 'vw'
+car.model = 'Passat'
 car.year = '2016'
-car.color = 'White'
-car.price = '10,000'
+car.color = 'Black'
+car.price = '15,000'
 table_service.insert_entity('itemstable', car)
-print('Created entry for Hawaiian...\n')
+print('Created entry for Cars...\n')
 
 # A partition key tracks how like-minded entries in the Table are created and queried.
 # A row key is a unique ID for each entity in the partition
@@ -107,23 +107,23 @@ print('Created entry for Hawaiian...\n')
 coffee = Entity()
 coffee.PartitionKey = 'Coffee'
 coffee.RowKey = '005'
-coffee.brand = 'Starbucks'
-coffee.flavor = 'vanilla'
-coffee.size = 'venti'
-coffee.cost = '3.00'
+coffee.brand = 'Capacino'
+coffee.flavor = 'Pain'
+coffee.size = 'Large'
+coffee.cost = '2.50'
 table_service.insert_entity('itemstable', coffee)
-print('Created entry for a starbucks...\n')
+print('Created entry for a Coffee...\n')
 time.sleep(1)
 
 coffee = Entity()
 coffee.PartitionKey = 'Coffee'
 coffee.RowKey = '006'
-coffee.brand = 'costa'
-coffee.flavor = 'almond'
-coffee.size = 'grande'
-coffee.cost = '3.00'
+coffee.brand = 'Flat White'
+coffee.flavor = 'Mint'
+coffee.size = 'Small'
+coffee.cost = '1.00'
 table_service.insert_entity('itemstable', coffee)
-print('Created entry for a costa...\n')
+print('Created entry for a coffee...\n')
 time.sleep(1)
 
 ###
